@@ -21,7 +21,7 @@ export class MainView extends React.Component {
                   Name: 'Drama',
                   Description: 'Dramas frequently follow characters you\'d see as your friends, neighbors, and family dealing with the struggles of everyday life. They usually take place in a home, office setting, or with a group of characters forced to interact day to day.'
               },
-              ImagePath: '~/images/TheRoomMovie.jpg',
+              ImagePath: 'https://m.media-amazon.com/images/M/MV5BYjEzN2FlYmYtNDkwMC00NGFkLWE5ODctYmE5NmYxNzE2MmRiXkEyXkFqcGdeQXVyMjMwODc5Mw@@._V1_UY209_CR0,0,140,209_AL_.jpg',
               Featured: true,
               Rated: 'R',
               Released: '2003',
