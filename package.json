@@ -16,6 +16,8 @@
   },
   "homepage": "https://github.com/patriciamcphee/bflix-client#readme",
   "dependencies": {
+    "axios": "^0.27.2",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
