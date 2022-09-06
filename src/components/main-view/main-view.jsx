@@ -1,17 +1,15 @@
 import React from 'react';
 import axios from 'axios';
 import Grid from '@mui/material/Grid';
-import { Stack } from '@mui/material';
 
-
-
-import { LoginView } from '../login-view/login-view'; //Import LoginView component
+//Import LoginView component
 import { SimpleSignInForm } from '../authentication/SimpleSignInForm/SimpleSignInForm';
+//Import MovieCard 
 import { MovieCard } from '../movie-card/complex-card';
-//import { MovieCard } from '../movie-card/movie-card'; //Import MovieCard component
+//Import MovieView component
 import { MovieView } from '../movie-view/movie-view2';
-//import { MovieView } from '../movie-view/movie-view'; //Import MovieView component
-import { RegistrationView } from '../registration-view/registration-view'; //Import RegistrationView component
+//Import RegistrationView component
+import { RegistrationView } from '../authentication/SimpleSignUpForm/SimpleSignUpForm';
 
 export class MainView extends React.Component {
 

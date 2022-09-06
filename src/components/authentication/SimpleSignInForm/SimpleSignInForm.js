@@ -31,7 +31,7 @@ export function SimpleSignInForm(props) {
             sx={{
               textTransform: 'uppercase',
             }}
-            gutterBottom
+             
             color={'text.secondary'}
             fontWeight={700}
           >

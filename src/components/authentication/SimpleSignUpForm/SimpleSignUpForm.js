@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import Grid from '@mui/material/Grid';
@@ -10,7 +11,21 @@ import Link from '@mui/material/Link';
 
 import { Container } from '@mui/material';
 
-const SimpleSignUpForm = () => {
+export function RegistrationView(props) {
+  const [ username, setUsername ] = useState('');
+  const [ password, setPassword ] = useState('');
+  const [ email, setEmail ] = useState('');
+  const [ Birthday, setBirthday] = useState('');
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(username, password, email, Birthday);
+    /* Send a request to the server for authentication */
+    /* then call props on registored user(username) */
+    props.onRegistration(username);
+  };
+
   return (
     <Box bgcolor={'alternate.main'}>
       <Container maxWidth={800}>
@@ -19,7 +34,7 @@ const SimpleSignUpForm = () => {
             sx={{
               textTransform: 'uppercase',
             }}
-            gutterBottom
+             
             color={'text.secondary'}
             fontWeight={700}
           >
@@ -42,24 +57,26 @@ const SimpleSignUpForm = () => {
             <Grid container spacing={4}>
               <Grid item xs={12} sm={6}>
                 <Typography variant={'subtitle2'} sx={{ marginBottom: 2 }}>
-                  Enter your first name
+                  Enter your username
                 </Typography>
                 <TextField
-                  label="First name *"
+                  label="Username *"
                   variant="outlined"
-                  name={'firstName'}
+                  name={'userName'}
                   fullWidth
+                  onChange={e => setUsername(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
                 <Typography variant={'subtitle2'} sx={{ marginBottom: 2 }}>
-                  Enter your last name
+                  Enter your password
                 </Typography>
                 <TextField
-                  label="Last name *"
+                  label="Password *"
                   variant="outlined"
-                  name={'lastName'}
+                  name={'password'}
                   fullWidth
+                  onChange={e => setPassword(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -71,18 +88,20 @@ const SimpleSignUpForm = () => {
                   variant="outlined"
                   name={'email'}
                   fullWidth
+                  onChange={e => setEmail(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12}>
                 <Typography variant={'subtitle2'} sx={{ marginBottom: 2 }}>
-                  Enter your password
+                  Enter your birthday
                 </Typography>
                 <TextField
-                  label="Password *"
+                  label="Birthday *"
                   variant="outlined"
-                  name={'password'}
-                  type={'password'}
+                  name={'birthday'}
+                  type={'date'}
                   fullWidth
+                  onChange={e => setBirthday(e.target.value)}
                 />
               </Grid>
               <Grid item container xs={12}>
@@ -108,7 +127,7 @@ const SimpleSignUpForm = () => {
                       </Link>
                     </Typography>
                   </Box>
-                  <Button size={'large'} variant={'contained'} type={'submit'}>
+                  <Button size={'large'} variant={'contained'} type={'submit'} onClick={handleSubmit}>
                     Sign up
                   </Button>
                 </Box>
@@ -144,4 +163,6 @@ const SimpleSignUpForm = () => {
   );
 };
 
-export default SimpleSignUpForm;
+RegistrationView.propTypes = {
+  onRegistration: PropTypes.func.isRequired,
+};

@@ -30,7 +30,7 @@ export class MovieView extends React.Component
     <Card raised='true'>
       <CardMedia
         component="img"
-        height="200"
+        width="50"
         crossOrigin='anonymous'
         image={movie.ImagePath}
         alt={movie.Title}
