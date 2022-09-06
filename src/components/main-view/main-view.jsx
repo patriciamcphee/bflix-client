@@ -2,14 +2,10 @@ import React from 'react';
 import axios from 'axios';
 import Grid from '@mui/material/Grid';
 
-//Import LoginView component
-import { SimpleSignInForm } from '../authentication/SimpleSignInForm/SimpleSignInForm';
-//Import MovieCard 
-import { MovieCard } from '../movie-card/complex-card';
-//Import MovieView component
-import { MovieView } from '../movie-view/movie-view2';
-//Import RegistrationView component
-import { RegistrationView } from '../authentication/SimpleSignUpForm/SimpleSignUpForm';
+import { LoginView } from '../login-view/login-view'; //Import LoginView component
+import { MovieCard } from '../movie-card/complex-card'; //Import MovieCard 
+import { MovieView } from '../movie-view/movie-view'; //Import MovieView component
+import { RegistrationView } from '../authentication/SimpleSignUpForm/SimpleSignUpForm'; //Import RegistrationView component
 
 export class MainView extends React.Component {
 
@@ -57,7 +53,7 @@ export class MainView extends React.Component {
   render() {
       const { movies, selectedMovie, user, registered } = this.state;
           /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/
-      if (!user) return <SimpleSignInForm onLoggedIn={(user) => this.onLoggedIn(user)} />;
+      if (!user) return <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />;
 
 
       if (selectedMovie) return <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => {this.setSelectedMovie(newSelectedMovie); }}/>

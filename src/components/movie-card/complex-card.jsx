@@ -32,7 +32,7 @@ export class MovieCard extends React.Component {
           {movie.Description}
         </Typography>
       </CardContent>
-      <CardActions  disableSpacing gutterBottom>
+      <CardActions  disableSpacing  >
       <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton>
